@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('プロバイダー'),
+          title: Text('Provider'),
         ),
         body: Center(
           child: Column(
