@@ -1,47 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:third/mainModel.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final String text = 'Provider';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider<mainModel>(
-        create: (_) => mainModel(),
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Provider'),
-          ),
-          body: Consumer<mainModel>(builder: (context, model, child) {
-            return Center(
-              child: Column(
-                children: [
-                  const SizedBox(height: 250),
-                  Text(
-                    model.text,
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
-                  RaisedButton(
-                    child: Text('change'),
-                    onPressed: () {
-                      model.changeText();
-                    },
-                  ),
-                ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Provider'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 250),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 30,
+                ),
               ),
-            );
-          }),
+              RaisedButton(
+                child: Text('change'),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-//続き5:50〜
-//https://www.youtube.com/watch?v=iN2IjSQR7Fs&t=574s
